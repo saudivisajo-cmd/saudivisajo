@@ -639,6 +639,18 @@ Sat — Thu`:m.jsxDEV(m.Fragment,{children:["عمّان - الأردن، الص�
 
 <script id="interface-motion-loader">(function(){document.documentElement.classList.add('motion-ready');var sections=document.querySelectorAll('.site-shell section:not(.hero-section)');if(!sections.length||!('IntersectionObserver'in window)){sections.forEach(function(section){section.classList.add('motion-visible');});return;}var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('motion-visible');observer.unobserve(entry.target);}});},{threshold:0.12,rootMargin:'0px 0px -45px 0px'});sections.forEach(function(section){observer.observe(section);});})();</script>
     <script defer src="https://manus-analytics.com/umami" data-website-id="dbbaa904-8767-4265-852c-a4a24ca6ab99"></script>
+  <style id="ios-scroll-visibility-fix">
+  /* Keep every section rendered on iOS/Safari; IntersectionObserver is enhancement-only. */
+  @supports (-webkit-touch-callout: none) {
+    html.motion-ready .site-shell section:not(.hero-section),
+    html.motion-ready .site-shell section.motion-visible {
+      opacity: 1 !important;
+      transform: none !important;
+      visibility: visible !important;
+      transition: none !important;
+    }
+  }
+  </style>
   <style id="location-responsive-overrides">
   .location-map, .map-embed, iframe[src*="google.com/maps"] { width: 100%; min-height: 320px; border: 0; border-radius: 18px; }
   img[src*="anwar-paris-complex"] { width: 100%; height: auto; object-fit: cover; image-rendering: auto; }
